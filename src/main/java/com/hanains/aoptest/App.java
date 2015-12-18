@@ -1,6 +1,7 @@
 package com.hanains.aoptest;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.hanains.aoptest.service.ProductService;
@@ -15,6 +16,10 @@ public class App
                             (ProductService)applicationContext.getBean( "productService" );
     	
     	productService.findProduct( "TV" );
+    	
+    	
 
+    	
+    	((AbstractApplicationContext) applicationContext).close();
 	}
 }

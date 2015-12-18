@@ -8,6 +8,11 @@ import com.hanains.aoptest.vo.ProductVo;
 public class ProductService {
 	public ProductVo findProduct( String name ) {
 		System.out.println( "finding " + name + "..." );
+		
+		if(1==1){
+			throw new RuntimeException("find");
+		}
+		
 		return new ProductVo( name );
 	}
 
