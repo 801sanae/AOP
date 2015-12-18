@@ -33,7 +33,11 @@ public class MyAspect {
 	public Object around(ProceedingJoinPoint pjp)throws Throwable{
 		
 		System.out.println(this.getClass()+"around.before() called");
+	/*
+		Object[] parmas = {"Camera"};
 		
+		Object res = pjp.proceed(parmas);// 데이터변경
+	*/	
 		Object res = pjp.proceed();
 		
 		System.out.println(this.getClass()+"around.after() called");
